@@ -82,8 +82,4 @@ def solve(
             x[i] = b[enter_dict[i]]
     solution = sum(x[i] * orig_c[i] for i in range(len(orig_c)))
 
-    return (
-        f"- solver_state: solved\n"
-        f"- x*: {x}\n"
-        f"- z: {solution}"
-    )
+    return (x, solution)
