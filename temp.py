@@ -1,16 +1,7 @@
-from main import solve
+from main import OptimizationProblem
 
 
-def print_solution(solutionTuple):
-    x, solution = solutionTuple[0], solutionTuple[1]
-    print(
-        f"- solver_state: solved\n"
-        f"- x*: {x}\n"
-        f"- z: {solution}\n")
-    
-
-
-print_solution(solve(
+print(OptimizationProblem(
     [9, 10, 16],
     [
         [18, 15, 12],
@@ -20,8 +11,9 @@ print_solution(solve(
     ["<=", "<=", "<="],
     [360, 192, 180]
 ))
+print("\n")
 
-print_solution(solve(
+print(OptimizationProblem(
     [-2, 2, -6],
     [
         [2, 1, -2],
@@ -32,8 +24,9 @@ print_solution(solve(
     [24, 23, 10],
     task="min"
 ))
+print("\n")
 
-print_solution(solve(
+print(OptimizationProblem(
     [7, 2, 4],
     [
         [1, 2, 1],
@@ -44,8 +37,9 @@ print_solution(solve(
     [430, 460, 420],
     task="min"
 ))
+print("\n")
 
-print_solution(solve(
+print(OptimizationProblem(
     [4, 14],
     [
         [2, 7],
@@ -54,3 +48,4 @@ print_solution(solve(
     ["<=", "<="],
     [21, 21]
 ))
+print("\n")
