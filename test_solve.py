@@ -2,13 +2,17 @@ import pytest
 from main import OptimizationProblem
 
 def test_min_task():
-    c = [10]
-    a = [[1]]
-    signs = [">="]
-    b = [2]
+    c = [7, 2, 4]
+    a = [
+        [1, 2, 1],
+        [3, 0, 2],
+        [1, 4, 0]
+    ]
+    signs = [">=", "<=", "<="]
+    b = [430, 460, 420]
     problem = OptimizationProblem(c, a, signs, b, task="min")
     problem.solve()
-    assert problem.x == [2] and problem.solution == 20
+    assert problem.x == [0, 0, 0] and problem.solution == 0
 
 def test_max_task():
     c = [1]
