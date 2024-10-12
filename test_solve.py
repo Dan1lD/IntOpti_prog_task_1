@@ -8,7 +8,7 @@ def test_min_task():
         [3, 0, 2],
         [1, 4, 0]
     ]
-    signs = [">=", "<=", "<="]
+    signs = ["<=", "<=", "<="]
     b = [430, 460, 420]
     problem = OptimizationProblem(c, a, signs, b, task="min")
     problem.solve()
