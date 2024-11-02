@@ -1,4 +1,4 @@
-import pytest 
+import pytest
 from main import OptimizationProblem
 
 # def test_min_task():
@@ -33,16 +33,27 @@ from main import OptimizationProblem
 #     problem.solve()
 #     assert problem.x == [2, 0, 0] and problem.solution == -2
 
-def test_doesnt_have_solution(): 
-    c = [1,1]
-    a = [[1,2] ,[1,2]]
-    signs =["<=", ">"]
-    b = [0,0]
+
+def test_doesnt_have_solution():
+    c = [1, 1]
+    a = [[1, 2], [1, 2]]
+    signs = ["<=", ">"]
+    b = [0, 0]
     problem = OptimizationProblem(c, a, signs, b)
     problem.solve()
     assert "The problem does not have solution!"
+def test_doesnt_have_solution1(): 
+    c = [1, 1, 1/7]
+    a = [[0, 1/3, 1/7], [2, 0, 1/7], [2, 2/3, 3/7]]
+    signs = ["<=", "<=", "<="]
+    b = [2, 3, 7]
+    problem = OptimizationProblem(c, a, signs, b)
+    problem.solve()
+    assert "The problem does not have solution"
+   
 
-# def test_no_valid_ratio(): 
+
+# def test_no_valid_ratio():
 #     c = [2,1]
 #     a = [[1,-1],[2,-1]]
 #     signs = ["<=", "<="]
@@ -51,7 +62,7 @@ def test_doesnt_have_solution():
 #     problem.solve()
 #     assert problem.solution is None
 
-# def test_all_zeroes(): 
+# def test_all_zeroes():
 #     c = [7,2,4]
 #     a = [[3,2,3],[3,0,2],[1,4,0]]
 #     signs = ["<=", "<=","<=",]
@@ -61,7 +72,7 @@ def test_doesnt_have_solution():
 #     assert problem.x == [0, 0, 0] and problem.solution == 0
 
 
-# def test_negative_C(): 
+# def test_negative_C():
 #     c = [-3,2,-2]
 #     a = [[1,2,1],[3,0,2],[1,4,0]]
 #     signs = ["<=", "<=","<=",]
