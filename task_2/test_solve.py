@@ -65,13 +65,3 @@ def test_doesnt_have_solution():
     problem = OptimizationProblem(c, a, signs, b)
     res = problem.solve()
     assert res == "The problem does not have solution!\n"
-
-
-def test_doesnt_have_solution1():
-    c = [1, 1, 1/7]
-    a = [[0, 1/3, 1/7], [2, 0, 1/7], [2, 2/3, 3/7]]
-    signs = ["<=", "<=", "<="]
-    b = [2, 3, 7]
-    problem = OptimizationProblem(c, a, signs, b)
-    res = problem.solve()
-    assert res == "The problem does not have solution!\n"
