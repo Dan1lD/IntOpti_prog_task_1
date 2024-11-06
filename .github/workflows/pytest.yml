@@ -34,7 +34,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: test  task_1 with pytest
+    - name: test task_1 with pytest
       run: pytest task_1/test_solve.py
-    - name: test  task_2 with pytest
+    - name: test task_2 with pytest
       run: pytest task_2/test_solve.py
+    - name: test task_3 with pytest
+      run: pytest task_3/test.py
