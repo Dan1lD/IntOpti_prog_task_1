@@ -39,3 +39,17 @@ problem = OptimizationProblem(
 )
 print(problem.solve() + problem.solve_by_simplex())
 print()
+
+problem = OptimizationProblem(
+    C=[-3, 2, -2],
+    A=[
+        [1, 2, 1],
+        [3, 0, 2],
+        [1, 4, 0],
+    ],
+    signs=["<=", "<=", "<="],
+    b=[430, 460, 420],
+    eps=0.0001,
+
+)
+print(problem.solve())
