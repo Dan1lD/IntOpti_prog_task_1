@@ -137,7 +137,7 @@ class TransportationProblem:
 
     def solve(self):
         if not self.balanced:
-            print("The problem is not balanced!”")
+            print("The problem is not balanced!")
             return
         self._solve_by_north_west()
         self._solve_by_vogel()
