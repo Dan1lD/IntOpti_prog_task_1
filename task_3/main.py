@@ -142,3 +142,7 @@ class TransportationProblem:
         self._solve_by_north_west()
         self._solve_by_vogel()
         self._solve_by_russell()
+        print("The North-West method:", self.solution_by_north_west)
+        print("The Vogel method:", self.solution_by_vogel)        
+        print("The Russell method:", self.solution_by_russell)
+        print()
