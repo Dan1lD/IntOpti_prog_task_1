@@ -1,4 +1,7 @@
 from math import inf
+import pprint
+
+import numpy as np
 
 
 class TransportationProblem:
@@ -142,6 +145,16 @@ class TransportationProblem:
         self._solve_by_north_west()
         self._solve_by_vogel()
         self._solve_by_russell()
+
+        result_matrix = []
+        for i, row in enumerate(self.c):
+            result_matrix.append(row + [str("|") + str(self.s[i])])
+        result_matrix.append(["_"] * len(self.c[0]))
+        result_matrix.append(self.d)
+
+        print("The problem matrix:")
+        pprint.pprint(result_matrix)
+
         print("The North-West method:", self.solution_by_north_west)
         print("The Vogel method:", self.solution_by_vogel)        
         print("The Russell method:", self.solution_by_russell)
